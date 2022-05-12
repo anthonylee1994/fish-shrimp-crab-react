@@ -1,16 +1,20 @@
 import React from "react";
-const { ethereum } = window as any;
+import { Box, ChakraProvider, Container } from "@chakra-ui/react";
+import { GameBoard } from "components/GameBoard";
+import { IntlProvider } from "react-intl";
+import zhHK from "locales/zh-HK";
+// const { ethereum } = window as any;
 
 export const App = React.memo(() => {
-  const connectWallet = React.useCallback(async () => {
-    try {
-      const accounts = await ethereum.request({
-        method: "eth_requestAccounts",
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-
-  return <div onClick={connectWallet}>111</div>;
+  return (
+    <IntlProvider locale="zh-HK" messages={zhHK}>
+      <ChakraProvider>
+        <Box w="100vw" h="100vh" d="flex" alignItems="center">
+          <Container minW="6xl" maxW="6xl">
+            <GameBoard />
+          </Container>
+        </Box>
+      </ChakraProvider>
+    </IntlProvider>
+  );
 });
