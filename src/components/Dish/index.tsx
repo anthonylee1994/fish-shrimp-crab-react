@@ -55,14 +55,17 @@ export const Dish = React.memo(() => {
 
   return (
     <Box
+      userSelect="none"
       opacity={disabled ? 0.5 : 1}
       cursor={disabled ? "not-allowed" : "pointer"}
       mb={2}
       height="100px"
       overflow="hidden"
       onClick={disabled ? undefined : bet}
-      _active={disabled ? undefined : { transform: "scale(0.8)" }}
-      transition="100ms ease-in-out"
+      _active={
+        disabled ? undefined : { transform: "rotate(180deg)", opacity: 0.5 }
+      }
+      transition="200ms ease-in-out"
     >
       <Box
         d="flex"

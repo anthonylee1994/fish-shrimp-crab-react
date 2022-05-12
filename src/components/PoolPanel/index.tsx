@@ -41,9 +41,6 @@ export const PoolPanel = React.memo(() => {
   return (
     <React.Fragment>
       <Box d="flex" flexDirection="column" borderRadius="md" w="full" mb={2}>
-        <Text fontSize="lg" mb={2} textAlign="center" fontWeight="bold">
-          <FormattedMessage id="pool" />
-        </Text>
         <Skeleton borderRadius="md" isLoaded={!isLoading}>
           <Text fontSize="sm" mb={2}>
             <strong>

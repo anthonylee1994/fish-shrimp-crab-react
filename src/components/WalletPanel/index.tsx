@@ -24,9 +24,6 @@ export const WalletPanel = React.memo(() => {
   return (
     <Box d="flex" flexDirection="column" borderRadius="md" w="full">
       <Box px={2}>
-        <Text mb={2} textAlign="center" fontWeight="bold">
-          <FormattedMessage id="metamask.wallet" />
-        </Text>
         <Skeleton isLoaded={!isLoading}>
           <Text fontSize="sm" mb={2}>
             <strong>
