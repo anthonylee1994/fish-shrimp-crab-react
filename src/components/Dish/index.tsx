@@ -22,8 +22,6 @@ export const Dish = React.memo(() => {
 
   const disabled = !isConnected || !hasPoolLiquidity || !hasBetAmount;
 
-  console.log("lastOpen", lastOpen);
-
   if (lastOpen) {
     return (
       <Flex
