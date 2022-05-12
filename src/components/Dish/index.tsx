@@ -34,7 +34,7 @@ export const Dish = React.memo(() => {
         bg="gray.100"
         borderRadius="lg"
       >
-        <Text fontSize="lg" textAlign="center" fontWeight="bold">
+        <Text mt={1} fontSize="lg" textAlign="center" fontWeight="bold">
           <FormattedMessage id="bet.result" />
         </Text>
         <Flex>
@@ -43,9 +43,9 @@ export const Dish = React.memo(() => {
           ))}
         </Flex>
         <Button
-          onClick={() => useBetContractStore.setState({ lastOpen: null })}
           m={2}
           colorScheme="red"
+          onClick={() => useBetContractStore.setState({ lastOpen: null })}
         >
           <FormattedMessage id="bet.again" />
         </Button>
@@ -61,6 +61,8 @@ export const Dish = React.memo(() => {
       height="100px"
       overflow="hidden"
       onClick={disabled ? undefined : bet}
+      _active={disabled ? undefined : { transform: "scale(0.8)" }}
+      transition="100ms ease-in-out"
     >
       <Box
         d="flex"
@@ -73,7 +75,13 @@ export const Dish = React.memo(() => {
         border="solid 3px"
         borderColor="red.500"
       >
-        <Text color="red.500" mt="30px" fontSize="4xl">
+        <Text
+          fontFamily="cwTeXKai, serif"
+          color="red.500"
+          mt="5px"
+          fontSize="7xl"
+          fontWeight="bold"
+        >
           <FormattedMessage id="bet.open" />
         </Text>
       </Box>
