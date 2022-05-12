@@ -62,7 +62,7 @@ export const Dish = React.memo(() => {
       mb={2}
       height="100px"
       overflow="hidden"
-      onClick={bet}
+      onClick={disabled ? undefined : bet}
     >
       <Box
         d="flex"
