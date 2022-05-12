@@ -1,7 +1,7 @@
 import create from "zustand";
 import { BigNumber, ethers } from "ethers";
 import { BetType } from "types/BetType";
-import BetGame from "artifacts/contracts/bet-game.sol/BetGame.json";
+import BetGameContract from "contracts/BetGameContract.json";
 import { useWalletStore } from "./useWalletStore";
 
 interface BetContractStore {
@@ -38,7 +38,7 @@ export const useBetContractStore = create<BetContractStore>((set, get) => ({
     const signer = provider.getSigner();
     return new ethers.Contract(
       process.env.REACT_APP_CONTRACT_ADDRESS!,
-      BetGame.abi,
+      BetGameContract.abi,
       signer
     );
   })(),
